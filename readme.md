@@ -1,6 +1,6 @@
 # CC New Game++
 
-A small collections of addons to CrossCode's NG+.
+A small collection of addons to CrossCode's NG+.
 
 ## Features
 
