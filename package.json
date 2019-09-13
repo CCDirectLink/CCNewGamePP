@@ -1,0 +1,10 @@
+{
+    "name": "New game++",
+    "module": true,
+    "plugin": "plugin.js",
+    "version": "1.0.0",
+    "dependencies": {
+        "crosscode": "^1.2.0",
+        "ccloader": "^2.14.3"
+    }
+}
