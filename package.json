@@ -2,8 +2,10 @@
     "name": "New game++",
     "module": true,
     "plugin": "plugin.js",
-    "version": "1.0.0",
-    "dependencies": {
+    "version": "1.0.1",
+    "homepage": "https://github.com/CCDirectLink/CCNewGamePP",
+    "description": "A small collection of addons to CrossCode's NG+.",
+    "ccmodDependencies": {
         "crosscode": "^1.2.0",
         "ccloader": "^2.14.3"
     }
