@@ -11,7 +11,7 @@ import { Overdrive } from './features/overdrive.js';
 import { Unbalanced } from './features/unbalanced.js';
 import { Clone } from './features/clone.js';
 import { NoDeath } from './features/noDeath.js';
-//import { NoCheat } from './features/noCheat.js';
+import { NoGui } from './features/noGui.js';
 
 /**
  * @extends {ccloader.Plugin}
@@ -33,7 +33,7 @@ export default class NewGamePlusPlus extends Plugin {
 			new Unbalanced(),
 			new Clone(),
 			new NoDeath(),
-			//new NoCheat(),
+			new NoGui(),
 		];
     
 		window.newGamePlusPlus = this;
@@ -56,8 +56,8 @@ export default class NewGamePlusPlus extends Plugin {
 		cat.addEntry('no-shield', 'No Shield', 'The shield is disabled.', 100);
 		cat.addEntry('no-dash', 'No Dash', 'Lea is unable to dash. Cheating is not allowed.', 100);
 		cat.addEntry('no-death', 'No Death', 'People die if you kill them.', 100);
-		//cat.addEntry('no-cheat', 'No Cheat', 'An addition truly worthy of a righteous Spheoromancer.', 100);
-
+		cat.addEntry('no-gui', 'No GUI', 'Like nature intended it to be.', 100);
+		
 
 		this._callFeatures('main');
 	}
