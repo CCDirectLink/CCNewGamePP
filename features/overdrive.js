@@ -29,7 +29,7 @@ export class Overdrive {
 				this.parent();
 
 				if (sc.newgame.get('overdrive')
-					&& this.level <= 1) {
+					&& this.model.level > 1) {
 					this._setDefaultArts();
 					this.doCombatAction('DASH_SPECIAL1');
 				}
