@@ -6,11 +6,14 @@ export class Overdrive {
              */
 			doCombatAction(type) {
 				if (sc.newgame.get('overdrive')
-                && this.model.getCore(sc.PLAYER_CORE.MENU_CIRCUIT)) {
+					&& this.model.level > 1) {
 					if (type === 'THROW_NORMAL' || type === 'THROW_NORMAL_REV') {
 						this._setDefaultArts();
 						type = 'THROW_SPECIAL1';
 					} else if (type === 'THROW_CHARGED' || type === 'THROW_CHARGED_REV') {
+						if (ig.EntityTools.getGroundEntity(this) instanceof ig.ENTITY.KeyPanel) {
+							return this.parent(type);
+						}
 						this._setDefaultArts();
 						type = 'THROW_SPECIAL2';
 					} else if (type === 'ATTACK' || type === 'ATTACK_REV') {
@@ -18,33 +21,35 @@ export class Overdrive {
 						type = 'ATTACK_SPECIAL1';
 					}
 				}
-                
+
 				this.parent(type);
 			},
-            
+
 			startDash() {
 				this.parent();
-                
-				if (sc.newgame.get('overdrive')) {
+
+				if (sc.newgame.get('overdrive')
+					&& this.level <= 1) {
+					this._setDefaultArts();
 					this.doCombatAction('DASH_SPECIAL1');
 				}
 			},
-            
+
 			/**
              * 
              * @param {{guarding: boolean}} options
              */
 			handleGuard(options, data) {
 				this.parent(options, data);
-                
+
 				if (sc.newgame.get('overdrive')
-                && this.model.getCore(sc.PLAYER_CORE.MENU_CIRCUIT)
-                && options.guarding) {
+					&& this.model.level > 1
+					&& options.guarding) {
 					this._setDefaultArts();
 					this.doCombatAction('GUARD_SPECIAL1');
 				}
 			},
-            
+
 			_setDefaultArts() {
 				this._setDefaultElementArts(sc.ELEMENT.NEUTRAL);
 				this._setDefaultElementArts(sc.ELEMENT.HEAT);
@@ -67,7 +72,7 @@ export class Overdrive {
 				this._setDefaultElementArt(element, sc.PLAYER_ACTION.GUARD_SPECIAL1, 'GUARD_SPECIAL1_A');
 				this._setDefaultElementArt(element, sc.PLAYER_ACTION.GUARD_SPECIAL2, 'GUARD_SPECIAL2_A');
 			},
-                        
+
 			/**
              * @param {number} element
              * @param {number} action
