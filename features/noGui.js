@@ -35,7 +35,7 @@ export class NoGui {
         
 		ig.GUI.StatusBar.inject({
 			showHpBar: function() {
-				return sc.newgame.get('no-gui') && this.parent(); 
+				return !sc.newgame.get('no-gui') && this.parent(); 
 			}
 		});
         
