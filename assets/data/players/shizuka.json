@@ -176,6 +176,24 @@
       "RIGHT_ARM": 351,
       "TORSO": 477,
       "FEET": 481
+    },
+    {
+      "level": 69,
+      "HEAD": 568,
+      "LEFT_ARM": 567,
+      "RIGHT_ARM": 567,
+      "TORSO": 569,
+      "FEET": 570,
+      "condition": "plot.line >= 40000"
+    },
+    {
+      "level": 74,
+      "HEAD": 573,
+      "LEFT_ARM": 577,
+      "RIGHT_ARM": 581,
+      "TORSO": 584,
+      "FEET": 594,
+      "condition": "plot.line >= 40000"
     }
   ],
   "DOCTYPE": "PLAYER",
