@@ -12,6 +12,7 @@ import { Unbalanced } from './features/unbalanced.js';
 import { Clone } from './features/clone.js';
 import { NoDeath } from './features/noDeath.js';
 import { NoGui } from './features/noGui.js';
+import { RandomTime } from './features/randomTime.js';
 
 /**
  * @extends {ccloader.Plugin}
@@ -34,6 +35,7 @@ export default class NewGamePlusPlus extends Plugin {
 			new Clone(),
 			new NoDeath(),
 			new NoGui(),
+			new RandomTime(),
 		];
     
 		window.newGamePlusPlus = this;
@@ -57,6 +59,7 @@ export default class NewGamePlusPlus extends Plugin {
 		cat.addEntry('no-dash', 'No Dash', 'Lea is unable to dash. Cheating is not allowed.', 100);
 		cat.addEntry('no-death', 'No Death', 'People die if you kill them.', 100);
 		cat.addEntry('no-gui', 'No GUI', 'Like nature intended it to be.', 100);
+		cat.addEntry('random-time', 'Broken Watch', 'Randomly speeds up and slows down time.', 100);
 		
 
 		this._callFeatures('main');
