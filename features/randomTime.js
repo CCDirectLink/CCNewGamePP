@@ -1,3 +1,5 @@
+const factors = [0.001, 0.5, 0.5, 0.9, 1, 1, 1.1, 1.25, 1.5, 1.5, 2.5]
+
 export class RandomTime {
     prestart() {
         ig.SlowMotion.inject({
@@ -24,10 +26,9 @@ export class RandomTime {
 
         ig.SlowMotionHandle.inject({
             transitionInitial: 1,
-            inverse: false,
             getFactor() {
                 let timeFactor = this.transitionTime ? this.timer / this.transitionTime : 0;
-                if (this.cleared || this.inverse)  {
+                if (!this.cleared)  {
                     timeFactor = 1 - timeFactor;
                 }
                 return (1 - timeFactor) * this.transitionInitial + timeFactor * this.factor;
@@ -40,7 +41,6 @@ export class RandomTime {
 
         this.slowmo = ig.slowMotion.add(1, 0);
         this.slowmo.name = 'randomTime';
-        this.slowmo.inverse = true;
 	}
 
 	onPostUpdate() {
@@ -102,6 +102,8 @@ export class RandomTime {
 
         this.slowmo.transitionInitial = this.slowmo.factor;
         this.slowmo.timer = this.slowmo.transitionTime = time;
-        this.slowmo.factor = (Math.random() * 1.5) ** 2 + 0.001;
+        this.slowmo.factor = factors.random();
+
+        //console.log(this.slowmo.factor, "for", time, "s");
     }
 }
