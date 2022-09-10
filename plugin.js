@@ -1,18 +1,19 @@
 /// <reference path="../../../ccloader/js/types/plugin.d.ts" />
-
-import { UiManager } from './uiManager.js';
-import { Jetpack } from './features/jetpack.js';
-import { Invincible } from './features/invincible.js';
 import { ChargedOnly } from './features/chargedOnly.js';
-import { RangedOnly } from './features/rangedOnly.js';
-import { NoShield } from './features/noShield.js';
-import { NoDash } from './features/noDash.js';
-import { Overdrive } from './features/overdrive.js';
-import { Unbalanced } from './features/unbalanced.js';
 import { Clone } from './features/clone.js';
+import { Invincible } from './features/invincible.js';
+import { Jetpack } from './features/jetpack.js';
+import { NoDash } from './features/noDash.js';
 import { NoDeath } from './features/noDeath.js';
 import { NoGui } from './features/noGui.js';
+import { NoShield } from './features/noShield.js';
+import { Overdrive } from './features/overdrive.js';
 import { RandomTime } from './features/randomTime.js';
+import { RangedOnly } from './features/rangedOnly.js';
+import { Tactician } from './features/tactician.js';
+import { Unbalanced } from './features/unbalanced.js';
+import { UiManager } from './uiManager.js';
+
 
 /**
  * @extends {ccloader.Plugin}
@@ -36,6 +37,7 @@ export default class NewGamePlusPlus extends Plugin {
 			new NoDeath(),
 			new NoGui(),
 			new RandomTime(),
+			new Tactician(),
 		];
     
 		window.newGamePlusPlus = this;
@@ -60,6 +62,7 @@ export default class NewGamePlusPlus extends Plugin {
 		cat.addEntry('no-death', 'No Death', 'People die if you kill them.', 100);
 		cat.addEntry('no-gui', 'No GUI', 'Like nature intended it to be.', 100);
 		cat.addEntry('random-time', 'Broken Watch', 'Randomly speeds up and slows down time.', 100);
+		cat.addEntry('tactician', 'Tactician', 'Introduces a turn based combat mechanic.', 100);
 		
 
 		this._callFeatures('main');

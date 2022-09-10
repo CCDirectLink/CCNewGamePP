@@ -18,6 +18,7 @@ A small collection of addons to CrossCode's NG+.
 | **No Death**         |  100 | People die if you kill them.                           |
 | **No GUI**           |  100 | Like nature intended it to be.                         |
 | **Broken Watch**     |  100 | Randomly speeds up and slows down time.                |
+| **Tactician**        |  100 | Introduces a turn based combat mechanic.               |
 
 
 <!-- | **No Cheat**         |  100 | An addition truly worthy of a righteous Spheoromancer. | -->
